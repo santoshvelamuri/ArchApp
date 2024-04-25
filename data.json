@@ -2,7 +2,7 @@
     { "name": "Component Management", "parent": null },
     { "name": "Component Design Management", "parent": "Component Management" },
     { "name": "Component 2D/3D Design", "parent": "Component Design Management" },
-    { "name": "Knit Design", "parent": "Component 2D/3D Design" },
+    { "name": "Knit Design 123", "parent": "Component 2D/3D Design" },
     { "name": "Print Design", "parent": "Component 2D/3D Design" },
     { "name": "Trims Design", "parent": "Component 2D/3D Design" },
     { "name": "Avatar Design", "parent": "Component 2D/3D Design" }
