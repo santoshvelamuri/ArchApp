@@ -1,6 +1,6 @@
 // Function to fetch JSON data from a file
 function fetchData() {
-    return fetch('data.json')
+    return fetch('data12.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
