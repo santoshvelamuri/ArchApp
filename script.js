@@ -1,13 +1,16 @@
-// Sample JSON data representing parent-child relationships
-const jsonData = [
-    { "name": "Component Management", "parent": null },
-    { "name": "Component Design Management", "parent": "Component Management" },
-    { "name": "Component 2D/3D Design", "parent": "Component Design Management" },
-    { "name": "Knit Design", "parent": "Component 2D/3D Design" },
-    { "name": "Print Design", "parent": "Component 2D/3D Design" },
-    { "name": "Trims Design", "parent": "Component 2D/3D Design" },
-    { "name": "Avatar Design", "parent": "Component 2D/3D Design" }
-];
+// Function to fetch JSON data from a file
+function fetchData() {
+    return fetch('data.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .catch(error => {
+            console.error('There was a problem fetching the data:', error);
+        });
+}
 
 // Function to generate HTML for the hierarchical diagram
 function generateDiagram(jsonData) {
