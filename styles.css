@@ -1,0 +1,31 @@
+.diagram {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+.box:last-child::after {
+    display: none;
+}
