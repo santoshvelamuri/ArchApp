@@ -1,7 +1,6 @@
 // Function to fetch JSON data from a file
-console.log("start")
 function fetchData() {
-    return fetch('https://github.com/santoshvelamuri/ArchApp/blob/main/data.json')
+    return fetch('data.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -47,5 +46,8 @@ function createBox(label) {
     return box;
 }
 
-// Generate the hierarchical diagram
-generateDiagram(jsonData);
+// Fetch data from JSON file and generate the hierarchical diagram
+fetchData()
+    .then(jsonData => {
+        generateDiagram(jsonData);
+    });
