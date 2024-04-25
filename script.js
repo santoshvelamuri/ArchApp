@@ -1,4 +1,5 @@
 // Function to fetch JSON data from a file
+console.log("start")
 function fetchData() {
     return fetch('https://github.com/santoshvelamuri/ArchApp/blob/main/data.json')
         .then(response => {
