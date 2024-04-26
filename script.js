@@ -19,7 +19,7 @@ function generateDiagram(jsonData) {
     // Create parent boxes
     const parents = jsonData.filter(item => item.parent === null);
     parents.forEach(parent => {
-        const parentBox = createBox(parent.name);
+        const parentBox = createBox(parent);
         diagramContainer.appendChild(parentBox);
         generateChildBoxes(parent.name, jsonData, parentBox);
     });
@@ -29,21 +29,42 @@ function generateDiagram(jsonData) {
 function generateChildBoxes(parentName, jsonData, parentBox) {
     const children = jsonData.filter(item => item.parent === parentName);
     children.forEach(child => {
-        const childBox = createBox(child.name);
+        const childBox = createBox(child);
         parentBox.appendChild(childBox);
         generateChildBoxes(child.name, jsonData, childBox);
     });
 }
 
-// Function to create a box element with label
-function createBox(label) {
+// Function to create a box element with label and extra attributes
+function createBox(data) {
     const box = document.createElement('div');
     box.classList.add('box');
+    box.dataset.name = data.name; // Store name in data attribute
+    box.dataset.description = data.description; // Store description in data attribute
+    box.dataset.businessDomain = data.business_domain; // Store business domain in data attribute
+    box.dataset.valueStream = data.value_stream; // Store value stream in data attribute
     const labelElement = document.createElement('div');
     labelElement.classList.add('label');
-    labelElement.textContent = label;
+    labelElement.textContent = data.name;
     box.appendChild(labelElement);
+
+    // Add click event listener to display additional information
+    box.addEventListener('click', () => {
+        displayInfo(box.dataset);
+    });
+
     return box;
+}
+
+// Function to display additional information when a box is clicked
+function displayInfo(data) {
+    const infoContainer = document.getElementById('info');
+    infoContainer.innerHTML = `
+        <h3>${data.name}</h3>
+        <p><strong>Description:</strong> ${data.description}</p>
+        <p><strong>Business Domain:</strong> ${data.businessDomain}</p>
+        <p><strong>Value Stream:</strong> ${data.valueStream}</p>
+    `;
 }
 
 // Fetch data from JSON file and generate the hierarchical diagram
