@@ -49,8 +49,15 @@ function createBox(data) {
     box.appendChild(labelElement);
 
     // Add click event listener to display additional information
-    box.addEventListener('click', () => {
-        displayInfo(box.dataset);
+    box.addEventListener('click', (event) => {
+        const clickedBox = event.currentTarget;
+        const clickedData = {
+            name: clickedBox.dataset.name,
+            description: clickedBox.dataset.description,
+            business_domain: clickedBox.dataset.businessDomain,
+            value_stream: clickedBox.dataset.valueStream
+        };
+        displayInfo(clickedData);
     });
 
     return box;
@@ -59,11 +66,16 @@ function createBox(data) {
 // Function to display additional information when a box is clicked
 function displayInfo(data) {
     const infoContainer = document.getElementById('info');
+    
+    // Clear previous data
+    infoContainer.innerHTML = '';
+    
+    // Display clicked capability data
     infoContainer.innerHTML = `
         <h3>${data.name}</h3>
         <p><strong>Description:</strong> ${data.description}</p>
-        <p><strong>Business Domain:</strong> ${data.businessDomain}</p>
-        <p><strong>Value Stream:</strong> ${data.valueStream}</p>
+        <p><strong>Business Domain:</strong> ${data.business_domain}</p>
+        <p><strong>Value Stream:</strong> ${data.value_stream}</p>
     `;
 }
 
