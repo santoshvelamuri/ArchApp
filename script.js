@@ -43,14 +43,13 @@ function createBox(data) {
     box.dataset.description = data.description; // Store description in data attribute
     box.dataset.businessDomain = data.business_domain; // Store business domain in data attribute
     box.dataset.valueStream = data.value_stream; // Store value stream in data attribute
-    const labelElement = document.createElement('div');
+    const labelElement = document.createElement('a'); // Change to anchor element
     labelElement.classList.add('label');
     labelElement.textContent = data.name;
-    box.appendChild(labelElement);
-
-    // Add click event listener to display additional information
-    box.addEventListener('click', (event) => {
-        const clickedBox = event.currentTarget;
+    labelElement.href = '#'; // Set href to #
+    labelElement.addEventListener('click', (event) => { // Add click event listener to anchor
+        event.preventDefault(); // Prevent default anchor behavior
+        const clickedBox = event.currentTarget.parentElement; // Get parent box
         const clickedData = {
             name: clickedBox.dataset.name,
             description: clickedBox.dataset.description,
@@ -59,6 +58,7 @@ function createBox(data) {
         };
         displayInfo(clickedData);
     });
+    box.appendChild(labelElement);
 
     return box;
 }
@@ -78,6 +78,7 @@ function displayInfo(data) {
         <p><strong>Value Stream:</strong> ${data.value_stream}</p>
     `;
 }
+
 
 // Fetch data from JSON file and generate the hierarchical diagram
 fetchData()
