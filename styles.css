@@ -39,13 +39,13 @@
 /* Add styles for hyperlinks */
 .label {
     text-decoration: none; /* Remove underline from hyperlinks */
-    color: #007bff; /* Blue color for hyperlinks */
+    color: black; /* Blue color for hyperlinks */
 }
 
 /* Add hover effect for hyperlinks */
 .label:hover {
     text-decoration: underline; /* Underline on hover */
-    color: #0056b3; /* Darker blue color on hover */
+    color: black; /* Darker blue color on hover */
 }
 
 .box::after {
