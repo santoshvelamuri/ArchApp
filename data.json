@@ -5,8 +5,7 @@
         "description": "Responsible for managing components.",
         "business_domain": "Manufacturing",
         "value_stream": "Product Development",
-        "status": "Active",
-        "color": "#28a745" // Green color for Active status
+        "color": "#ede8af"
     },
     { 
         "name": "Component Design Management",
@@ -14,8 +13,7 @@
         "description": "Responsible for managing component design.",
         "business_domain": "Design",
         "value_stream": "Product Development",
-        "status": "Active",
-        "color": "#28a745" // Green color for Active status
+        "color": "#ede8af"
     },
     { 
         "name": "Component 2D/3D Design",
@@ -23,8 +21,7 @@
         "description": "Responsible for creating 2D/3D designs.",
         "business_domain": "Design",
         "value_stream": "Product Development",
-        "status": "Active",
-        "color": "#28a745" // Green color for Active status
+        "color": "#ede8af"
     },
     { 
         "name": "Knit Design",
@@ -32,8 +29,7 @@
         "description": "Responsible for knit design.",
         "business_domain": "Textile",
         "value_stream": "Product Development",
-        "status": "Inactive",
-        "color": "#dc3545" // Red color for Inactive status
+        "color": "#ede8af"
     },
     { 
         "name": "Print Design",
@@ -41,8 +37,7 @@
         "description": "Responsible for print design.",
         "business_domain": "Design",
         "value_stream": "Product Development",
-        "status": "Inactive",
-        "color": "#dc3545" // Red color for Inactive status
+        "color": "#ede8af"
     },
     { 
         "name": "Trims Design",
@@ -50,8 +45,7 @@
         "description": "Responsible for trims design.",
         "business_domain": "Design",
         "value_stream": "Product Development",
-        "status": "Inactive",
-        "color": "#dc3545" // Red color for Inactive status
+        "color": "#ede8af"
     },
     { 
         "name": "Avatar Design",
@@ -59,7 +53,6 @@
         "description": "Responsible for avatar design.",
         "business_domain": "Design",
         "value_stream": "Product Development",
-        "status": "Inactive",
-        "color": "#dc3545" // Red color for Inactive status
+        "color": "#afedc8"
     }
 ]
