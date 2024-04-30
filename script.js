@@ -43,6 +43,8 @@ function createBox(data) {
     box.dataset.description = data.description; // Store description in data attribute
     box.dataset.businessDomain = data.business_domain; // Store business domain in data attribute
     box.dataset.valueStream = data.value_stream; // Store value stream in data attribute
+    box.dataset.status = data.status; // Store status in data attribute
+    box.style.backgroundColor = data.color; // Set background color based on status
     const labelElement = document.createElement('a'); // Change to anchor element
     labelElement.classList.add('label');
     labelElement.textContent = data.name;
