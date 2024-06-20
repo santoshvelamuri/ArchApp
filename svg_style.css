@@ -1,0 +1,41 @@
+/* Apply CSS grid layout */
+.container {
+    display: grid;
+    grid-template-columns: 70% 30%; /* 70% for diagram, 30% for info */
+    height: 100vh; /* Set container height to full viewport height */
+}
+
+.diagram {
+    background-color: #f0f0f0; /* Light gray background */
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 20px; /* Add padding for spacing */
+    overflow-y: auto; /* Add overflow for scrolling */
+}
+
+.info {
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 20px; /* Add padding for spacing */
+    overflow-y: auto; /* Add overflow for scrolling */
+}
+
+.box {
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+}
+
+/* Add styles for hyperlinks */
+.label {
+    text-decoration: none; /* Remove underline from hyperlinks */
+    color: #007bff; /* Blue color for hyperlinks */
+}
+
+/* Add hover effect for hyperlinks */
+.label:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #0056b3; /* Darker blue color on hover */
+}
